@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Roil Services</title>
+    <!-- un-comment this code to enable service worker
+        <script>
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+              .then(() => console.log('service worker installed'))
+              .catch(err => console.log('Error', err));
+          }
+        </script>-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/ionic/css/nouislider.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ionic/js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="lib/ionic/js/canvasjs.min.js"></script>
+    <script src="lib/ionic/js/wNumb.js"></script>
+    <script src="lib/ionic/js/nouislider.min.js"></script>
+    <script src="lib/ionic/js/moment.min.js"></script>
+    <script src="lib/ionic/js/jquery-1.10.1.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var log = function (a) {
+                $(".info").html($(".info").html() + "<br/>" + a);
+            };
+            var toggleClick = function () {
+                var divObj = $(this).next();
+                var nstyle = divObj.css("display");
+                if (nstyle == "none") {
+                    divObj.slideDown(false, function () {
+                        $("html").bind("click", function () {
+                            divObj.slideUp();
+                            $("html").unbind("click");
+                        });
+                    });
+                }
+            };
+            $(document).on('click', ".clickme", toggleClick);
+            $(document).on('click', "ul#speed li a", function () {
+                $("a#speed-holder span:eq(0)").text($(this).data("speed"));
+            });
+            $(document).on("click", "ion-content#onoffmodal div.col-33 a", function () {
+                if ($(this).attr('class') == "on_txt") {
+                    $(this).attr('class', "off_txt");
+                    $(this).siblings().attr('class', "on_txt");
+                }
+                else {
+                    $(this).attr('class', "on_txt");
+                    $(this).siblings().attr('class', "off_txt");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body ng-app="starter">
+    <!--<div id="start-loader"><img width="360" src="img/roil_intro.gif" /></div>-->
+    <div id="api-loader" style="display:none;"><img width="360" src="img/roil_intro.gif" /></div>
+    <ion-side-menus>
+        <!-- Center content -->
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-positive slack-bar navbar-shadow" align-title="center">
+                <ion-nav-back-button class="button-clear"></ion-nav-back-button>
+                <ion-nav-buttons side="left">
+                    <button class="button slack-button" menu-toggle="left"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <!-- Main view content -->
+            <ion-nav-view animation="slide-left-right"></ion-nav-view>
+        </ion-side-menu-content>
+        <!-- Left menu -->
+        <ion-side-menu side="left">
+            <ion-content>
+                <!-- User profile -->
+                <div> <img width="275" menu-close="" ng-src="img/sidebar-banner.png"> </div>
+                <div class="row" style="margin-top: -25px;">
+                    <div class="col">
+                        <div class="item-image" ui-sref="rigs" menu-close=""> <img src="img/rig.png" width="90">
+                            <p style="margin-bottom:0px;">My Rigs</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item-image" ui-sref="wells" menu-close=""> <img src="img/well.png" width="90">
+                            <p style="margin-bottom:0px;">Past Wells</p>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border: 1px solid #e8e8e7;" />
+                <div class="row" style="background-color: #fafafa;margin-top:-20px; margin-bottom: -10px;">
+                    <div class="col">
+                        <div class="item-image">
+                            <p style="font-size:16px;">Contact Details:</p> <img src="img/contact-icon.png" class="img-circle" style="width:100px !important;" />
+                            <p style="font-size:14px;padding-bottom:0px;margin-bottom:0px;">Drew Murr</p>
+                            <p style="font-size:11px;padding-bottom:0px;margin-bottom:0px;"> President
+                                <br> Drew@RoilServices.com
+                                <br> 512-576-5535 </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu -->
+                <div class="list" menu-close="">
+                    <div class="item item-icon-left smlist-item" ui-sref="logout"> <i class="icon ion-log-out"></i> Logout </div>
+                </div>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+    <script id="error-list.html" type="text/ng-template">
+        <div class="error" ng-message="required"> * This field is required! </div>
+        <div class="error" ng-message="email"> * Enter a valid email address! </div>
+        <div class="error" ng-message="minlength"> * Minimum length of this field is 5 characters! </div>
+        <div class="error" ng-message="maxlength"> * Maximum length of this field is 20 characters! </div>
+    </script>
+</body>
+
+</html>

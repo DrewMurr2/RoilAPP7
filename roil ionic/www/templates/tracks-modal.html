@@ -1,0 +1,20 @@
+<ion-modal-view style="width: 90%; min-height: 70%; top: 38px; left: 5%; right: 5%; bottom:60%; box-shadow: 0 10px 10px #333; border-radius:0 0 5px 5px;">
+    <ion-header-bar class="bar bar-header bar-positive" style=" background:#231f20 !important; height: 45px !important;">
+        <h1 class="title" style="color:#fff; margin:13px 0 !important; line-height:normal !important; font-weight:normal; font-size: 14px !important; text-align: center;">Tracks</h1>
+    </ion-header-bar>
+    <ion-content class="login-bg" id="onoffmodal">
+        <div class="row" ng-repeat="point in latestValues.Tracks" ng-class-odd="'on_off_item_wt'" ng-class-even="'on_off_item_gry'">
+            <div class="col-67">{{point.Name | underscoreless}}</div>
+            <div class="col-33">
+                <a href="javascript:;" ng-class='trackOnOff[$index].On' ng-click="HandleTrackClick($index, 1)">On</a> | <a href="javascript:;" ng-class='trackOnOff[$index].Off' ng-click="HandleTrackClick($index, 0)">Off</a> 
+                <img src="img/confg_icon_gray.png" class="item-image" style="width:15px;float: right;" ng-click="openRangeModal($index)" />
+            </div>
+        </div>
+    </ion-content>    
+    <div class="row modal_footer">
+        <div class="col-80"></div>
+        <div class="col-20">
+            <button class="button button-small button-dark" style="float: right;" ng-click="closeTrackModal()">DONE</button>
+        </div>        
+    </div>
+</ion-modal-view>

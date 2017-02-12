@@ -1,0 +1,35 @@
+<ion-modal-view style="width: 100%; min-height: 82.5%; top: 68px; left: 0%; right: 0%; bottom:38px; background: rgba(255, 255, 255, 0.7); border-radius:0;">
+    <ion-content>
+        <div class="row">
+            <div class="col">
+                <div class="row">            
+                    <div class="col col-25" style="margin-top:0;">
+                        <div style='background: rgba(0, 0, 0, 0) url("img/track_top_green.png") no-repeat scroll center top / 26% auto; height: 6px;'></div>
+                        <div id="time-span-1" style="margin-bottom: 0px !important; background: rgba(0, 0, 0, 0) url('img/track_middle_green.png') repeat-y scroll center center / 100% auto;"></div>
+                        <div style='background: rgba(0, 0, 0, 0) url("img/track_bottom_green.png") no-repeat scroll center top / 26% auto; height: 6px;'></div>
+                    </div>
+                    <div class="col col-50">
+                        <div class="tspan" style="text-align: center;">
+                            <p>Time Span</p>
+                        </div>
+                        <div class='time_span'>                            
+                            <button class="button button-balanced" style="line-height:22px; font-size:14px; padding: 0 10px; min-height:30px; margin-bottom: 20px; border-radius: 0; cursor: default;">Time Window</button>
+                            <p id="timeLabel">15 Minutes</p>
+                            <button class="button button-balanced" style="line-height:22px; font-size:14px; padding: 0 10px; min-height:30px; margin-bottom: 20px; border-radius: 0; background:#231f20; color: #fff; cursor: default;">Graph Location</button>
+                            <p id="locationLabel"></p>
+                            <p>
+                                <img src="img/go-button.png" style="width:65px; cursor: pointer;" ng-click="goTimespanSelect()" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col col-25">
+                        <div style="position: absolute; z-index: 2; right:20px; top:15px; font-size: 19px; cursor: pointer;" ng-click="closeTimeSpanModal()">X</div>
+                        <div style='background: rgba(0, 0, 0, 0) url("img/track_top.png") no-repeat scroll center top / 26% auto; height: 6px;'></div>
+                        <div id="time-span-2" style="margin-bottom: 0px !important;"></div>
+                        <div style='background: rgba(0, 0, 0, 0) url("img/track_bottom.png") no-repeat scroll center top / 26% auto; height: 6px;'></div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </ion-content>    
+</ion-modal-view>

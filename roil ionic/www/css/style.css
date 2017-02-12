@@ -1,0 +1,180 @@
+/* Empty. Add your own CSS if you like */
+#start-loader, #api-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.slack-bar .title.title-left.header-item {
+    font-weight: bold;
+    left: 48px !important; 
+}
+.slack-bar .title.title-left.header-item .icon {
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 13px;
+    padding-left: 4px; 
+}
+
+.slack-bar .right-buttons .button.button-icon.button-clear {
+    margin-left: 4px;
+    margin-right: 7px; 
+}
+.slack-bar .right-buttons .button.button-icon.button-clear::before {
+    font-size: 25px !important; 
+}
+
+.slack-button {
+    background: rgba(0, 0, 0, 0) url("../img/roil-menu-button.png") no-repeat scroll center center / 45px auto;
+    border: medium none;
+    width: 55px;
+    margin-top: 0px;
+}
+
+.live-data-icon-green {
+    background: rgba(0, 0, 0, 0) url("../img/live-data-icon-green.png") no-repeat scroll center center / 90px auto;
+    border: medium none;
+    width: 65px;
+    margin-top: 4px;
+}
+
+.live-data-icon-grey {
+    background: rgba(0, 0, 0, 0) url("../img/live-data-icon-grey.png") no-repeat scroll center center / 90px auto;
+    border: medium none;
+    width: 65px;
+    margin-top: 4px;
+}
+
+.live-data-icon-white {
+    background: rgba(0, 0, 0, 0) url("../img/live-data-icon-white-new.png") no-repeat scroll center center / 100% auto;
+    border: medium none;
+    width: 21px;
+    margin-right: 10px !important;
+}
+
+.navbar-shadow{
+    box-shadow: 0 0 5px #333;
+}
+
+.always_bottom img {    
+    left: 0;
+    bottom: 0;
+}
+
+.img-circle {
+    border-radius: 50% !important;
+}
+
+.bar-header {
+   height: 55px !important;
+}
+
+.bar-header .title {
+   line-height: 55px !important;
+   margin-top: 4px !important; margin-right:30px
+}
+
+.has-header {
+   top: 55px !important;
+}
+
+.bar-header .title img{
+    width: 130px;
+}
+
+.inner-bar-header {
+   background:#231f20 !important; 
+   color:#fff !important; 
+   /*margin:0 !important;
+   font-size:12px !important;
+   height: 43px !important;*/
+}
+
+.inner-bar-header .title {
+   line-height: 43px !important;
+   margin-top: 0px !important;
+   color:#fff !important; 
+   font-size: 14px;
+   font-weight: normal;
+}
+
+.inner-has-header {
+   top: 43px !important;
+}
+
+.inner-bar-header .bar-positive .button.button-clear{
+    color: #fff !important;
+}
+
+.inner-bar-header .bar{
+    border-bottom: 0px !important;
+}
+/******** IOS ********/
+.platform-ios .bar-header {
+  height: 85px !important;
+}
+
+.platform-ios .bar-header .title {
+   line-height: 85px !important;
+   margin-top: 33px !important;
+}
+
+.platform-ios .has-header {
+   top: 85px !important;
+}
+/******** IOS ********/
+.navbar-shadow .bar .button.back-button, .navbar-shadow .bar button.back-button {    
+    font-weight: 400;
+    margin-right: 5px;
+    padding: 5px 0 0 10px;
+    white-space: nowrap;
+}
+
+.bg-img{ 
+    background: rgba(0, 0, 0, 0) url("../img/img1.png") no-repeat scroll center bottom / 100% auto;
+}
+
+.odd{
+    /*background-color: #f8f9fa;*/
+    background: rgba(248, 249, 250, 0.7) url("../img/gray_bg.png") no-repeat scroll center bottom / 100% auto;
+}
+
+.even{
+    /*background-color: #ffffff;*/
+    background: rgba(255, 255, 255, 0.7) url("../img/white_bg.png") no-repeat scroll center bottom / 100% auto;
+}
+
+.stat .col{
+    margin: -8px 5px;
+    padding: 10px 5px;
+}
+
+/*NEW CSS*/
+.inner_header{background:#231f20; margin:0; color:#fff; font-size:14px;}
+.menu_back{ width:15px; height:auto;}
+.menu_link{ text-align:center; line-height:1.5;}
+.menu_link a{ color:#fff;line-height: 1.428571429;}
+.menu_link a:hover{ color:#ccc;}
+.menu_link a.active{ color:#ccc;}
+.inner_sub_header{ background:url(../img/inner_gray_bg.png); color:#fff; font-size:13px;}
+.inner_sub_header span{ margin-right:7px;}
+
+.even_graph{background: rgba(233, 234, 235, 0.7) url("../img/white_bg.png") no-repeat scroll center bottom / 100% auto; height:100px; text-align:center; padding:0;}
+.odd_graph{background: rgba(255, 255, 255, 0.7) url("../img/gray_bg.png") no-repeat scroll center bottom / 100% auto; height:100px; text-align:center; padding:0; }
+.black_link{ color:#231f20; font-size:17px; font-weight:500;}
+.black_link:hover{ color:#231f20;}
+.btn-default .caret{border-top-color:#fff;}
+.on_off_item_wt{background:#FFF; padding:5px 15px !important; margin-top: 0px !important;}
+.on_off_item_gry{background:#ebebeb; padding:5px 15px !important; margin-top: 0px !important;}
+.on_off_item_gry img, .on_off_item_wt img{margin-top:3px;}
+.modal_footer{background:transparent; position: absolute; bottom: 0; padding:5px 10px;}
+.modal_footer button{background: #231f20; color:#fff; padding:3px 15px; border-radius:3px;}
+.modal_footer button:hover{background: #231f20;}
+.on_txt{color: #231f20 !important;}
+.off_txt{color: #cecdce !important;}
+
+.time_span{margin:50px 5px; text-align:center}
+.time_span p, .tspan p{ font-size:16px; color:#231f20; line-height:30px}
+/*NEW CSS*/

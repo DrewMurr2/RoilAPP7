@@ -1,0 +1,43 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+    <ion-content class="bg-img login-bg">
+        <div class="card" style="padding-top: 0px;">
+            <!-- Logo -->            
+            <div style="text-align: center; background: #231f20; padding-bottom: 10px;">
+                <img src="img/img2.png" width="150">
+            </div>            
+            
+            <div class="row">
+                <div style="width: 15px;"></div>
+                <div class="col">
+                    <!-- Login form -->
+                    <form id="authorizationForm" name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm, authorization)">
+                        <div class="list list-inset transparent-form">
+                            <label class="item item-input">
+                                <i class="ion-ios-email-outline light icon-label"></i>
+                                <input type="text" placeholder="Username" name="username" ng-model="authorization.username" required>
+                            </label>
+                            <div class="error-container" ng-show="authorizationForm.username.$error && authorizationForm.$submitted" ng-messages="authorizationForm.username.$error">
+                                <div ng-messages-include="error-list.html"></div>
+                            </div>
+                            <label class="item item-input">
+                                <i class="ion-ios-locked-outline light icon-label"></i>
+                                <input type="password" placeholder="Password" name="password" ng-model="authorization.password" required>
+                            </label>
+                            <div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
+                                <div ng-messages-include="error-list.html"></div> 
+                            </div>
+                        </div>
+                        <div class="padding">
+                            <button type="submit" class="button button-block button-positive">
+                                LOGIN
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div style="width: 15px;"></div>
+            </div>
+            
+        </div>        
+        <!-- Other links -->    
+    </ion-content>
+</ion-view>

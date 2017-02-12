@@ -1,0 +1,66 @@
+<!--
+  This template loads for the 'home' state (app.js)
+  'posts' is a $scope variable come from Home controller
+-->
+<ion-view hide-nav-bar="true">
+    <ion-content class="bg-img login-bg" style="padding:0px;">
+        <div class="row inner_header" style="padding:7px 15px;">
+            <div class="col-20">
+                <div class="item-image  menu_back">
+                    <a href="javascript:;" ng-click="Backout()">
+                        <img src="img/menu_arrow.png" border="0"/>
+                    </a>
+                </div>
+            </div>
+            <div class="col-50 menu_link">
+                <a ui-sref="rig-live-data" class="active">Values</a> | <a ui-sref="logs-historic-live">Logs</a>
+            </div>
+            <div class="col-20">
+                <div class="btn-group" ng-click="openTrackModal()" style="float: right;">
+                    <a class="btn btn-default dropdown-toggle clickme" data-toggle="dropdown">
+                        Tracks
+                        <span class="caret"></span>
+                    </a>                            
+                </div>                            
+            </div>
+            <div class="col-10">
+                <a href="javascript:;">
+                    <img ng-click="changeView(buttonClass)" ng-src="img/{{buttonClass}}.png" border="0" class="item-image" style="width:20px; float:right;" />
+                </a>
+            </div>
+        </div>        
+        <div class="inner_sub_header" style="position:absolute; width:100%; z-index:10;">
+            <div class="row" style="padding:5px 15px 0px 15px;">
+                <div class="col-67">
+                    <span id="spanStartTime"></span>
+                </div>
+                <div class="col-33">
+                    <div style="float: right;">
+                        <img src="img/confg_icon.png" class="item-image" style="width:20px; margin-top: -1px;" ng-click="openTimeSpanModal()" />
+                    </div>
+                    <div style="float:right;" ng-hide="live_log">
+                        <img id="playGraphButton" onclick="playGraph()" src="img/play_icon.png" class="item-image" style="width:20px; margin-top: -1px;"/>&nbsp;
+                        <img id="stopGraphButton" onclick="stopGraph()" src="img/stop_icon.png" class="item-image" style="width:20px; margin-top: -1px; display:none;"/>&nbsp;
+                        <div class="btn-group" style="margin-right:3px;  margin-top: -15px;">
+                            <a class="btn btn-default dropdown-toggle clickme" data-toggle="dropdown" id="speed-holder">
+                                <span>1x</span><span class="caret" style="border-top-color:#FFF;"></span>
+                            </a>
+                            <ul id="speed" class="dropdown-menu" style="min-width:50px;">                                
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div> 
+        <div id="chart_container">
+            <div id="drewschart" style="height:600px; width:100%;"></div>
+        </div>        
+    </ion-content>
+    <div class="inner_sub_header" style="position:fixed; bottom:0px; width:100%">
+        <div class="row" style="padding:5px 15px;">
+            <div class="col-100">
+                <span id="spanEndTime"></span>
+            </div>
+        </div>
+    </div>
+</ion-view>

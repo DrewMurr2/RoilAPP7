@@ -1,0 +1,69 @@
+<!--
+  This template loads for the 'home' state (app.js)
+  'posts' is a $scope variable come from Home controller
+-->
+<ion-view hide-nav-bar="true">    
+    <ion-content class="bg-img login-bg stat">
+        <div class="row inner_header" style="padding:7px 15px;">
+            <div class="col-25">
+                <div class="item-image  menu_back">
+                    <a href="javascript:;" ng-click="Backout()">
+                        <img src="img/menu_arrow.png" border="0"/>
+                    </a>
+                </div>
+            </div>
+            <div class="col-50 menu_link">
+                <a ui-sref="rig-live-data">Values</a> | <a class="active" ui-sref="logs-historic-live">Logs</a>
+            </div>            
+            <div class="col-25">
+                <a href="javascript:;">
+                    <img ng-src="img/{{buttonClass}}.png" border="0" class="item-image" style="width:20px; float:right;" ng-click="changeView(buttonClass)" />
+                </a>
+            </div>
+        </div>
+        <div ng-hide="overview_data" style='margin-top: -15px;'>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col" style="text-align: center;">
+                            {{endtime}}
+                        </div>
+                    </div>
+                    <div style="box-shadow: 0 0 5px #333;">
+                        <div class="row" ng-repeat="point in latestValues.Tracks" ng-class-odd="'odd'" ng-class-even="'even'" style="margin-top:0px !important;">
+                            <div class="col" style="border-right: solid 1px #959594;">{{point.Name | underscoreless}}</div>
+                            <div class="col">{{point.Values[nextVal]}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        
+        <div ng-hide="live_data" style='margin-top: -15px;'>            
+            <div class="row">
+                <div class="col col-80">
+                    <div class="row">
+                        <div class="col" style="text-align: center;">
+                            {{oendtime}}
+                        </div>                
+                    </div>
+                    <div style="box-shadow: 0 0 5px #333;">
+                        <div class="row" ng-repeat="opoint in overviewValues.Tracks" ng-class-odd="'odd'" ng-class-even="'even'" style="margin-top:0px !important;">
+                            <div class="col" style="border-right: solid 1px #959594;">{{opoint.Name | underscoreless}}</div>
+                            <div class="col">{{opoint.Values[onextVal]}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-20">
+                    <div class="row">
+                        <div class="col" style="margin-top:0px;">
+                            <div style='background: rgba(0, 0, 0, 0) url("img/track_top.png") no-repeat scroll center top / 100% auto; height: 6px;'></div>
+                            <div id="live-data" style="margin-bottom: 0px !important;"></div>
+                            <div style='background: rgba(0, 0, 0, 0) url("img/track_bottom.png") no-repeat scroll center top / 100% auto; height: 6px;'></div>
+                        </div>
+                    </div>                
+                </div>            
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-modal-view id="track_depth_modal" style="width: 100%; min-height: 82.5%; top: 68px; left: 0%; right: 0%; bottom:38px; border-radius:0; background: rgba(255, 255, 255, 0.7);">    
+    <ion-content>
+        <div class="row" style="padding:0; background:rgba(35, 31, 32, 0.7) !important;">
+            <h1 class="title" style="color:#fff; margin:8px 15px !important; line-height:normal !important; font-weight:normal; font-size: 14px !important; text-align: left;">{{TrackName | underscoreless}}</h1>
+        </div>
+        <div class="item range item_bg colorSlider" id="setcolor" style="margin-top:20px;">
+            <div id="color_slider"></div>
+        </div>
+        <div class="row" style="padding:0;">
+            <div class="col-40 renge_txt_left"></div><div class="col-60 renge_txt_left" style="padding-left:10px;">Scale</div></div>
+        <div class="row" style="padding:0 15px;">
+            <div class="col-50 renge_txt_left" id="left_scale_value"></div>
+            <div class="col-50 renge_txt_right" id="right_scale_value"></div>
+        </div>
+        <br>
+        <div class="row" style="padding:0;">
+            <div class="col-40 renge_txt_left"></div>
+            <div class="col-60 renge_txt_left" style="padding-left:10px;">ZOOM</div>                
+        </div>
+        <div class="item range zoomSlider" style="margin:0 15px; background-color: transparent !important;">
+            <div id="zoom_slider"></div>
+        </div>
+        
+        <div class="row" style="padding:0; margin-top: 20px;">
+            <div class="col-40 renge_txt_left"></div>
+            <div class="col-60 renge_txt_left" style="padding-left:10px;">OFFSET</div>                
+        </div>
+        <div class="item range offsetSlider" style="margin:0 15px; background-color: transparent !important;">
+            <div id="offset_slider"></div>
+        </div>
+        <div class="row">        
+            <div class="col" style="text-align: center; padding: 30px 0;">
+                <img src="img/save-button.png" style="width:65px; cursor: pointer;" ng-click="closeRangeModal()" />            
+            </div>        
+        </div>
+        <style type="text/css">
+            .colorSlider .noUi-target, .zoomSlider .noUi-target, .offsetSlider .noUi-target
+            {
+                background:#000; 
+                height:7px; 
+                border-radius:5px; 
+                padding:0px;
+            }
+            .colorSlider .noUi-handle, .zoomSlider .noUi-handle, .offsetSlider .noUi-handle {
+                background: rgba(0, 0, 0, 0) url("img/modal-knob.png") no-repeat scroll center center / 25px auto;
+                cursor: default;
+            }
+            .colorSlider .noUi-horizontal .noUi-handle, .zoomSlider .noUi-horizontal .noUi-handle, .offsetSlider .noUi-horizontal .noUi-handle {
+                width: 34px;
+                height: 28px;
+                left: -17px;
+                top: -12px;
+            }
+            
+            .item_bg{ background: #56d630; margin: 0 15px;}
+            .renge_txt_center{ color: #434343; text-align: center; text-transform: uppercase}
+            .renge_txt_left{ color: #434343; text-align:left;}
+            .renge_txt_right{ color: #434343; text-align:right;}
+            .item{ border-width: 0 !important}
+        </style>    
+    </ion-content>    
+</ion-modal-view>
